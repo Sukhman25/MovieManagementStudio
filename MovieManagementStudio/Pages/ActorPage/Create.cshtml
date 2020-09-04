@@ -1,0 +1,58 @@
+﻿@page
+@model MovieManagementStudio.Pages.ActorPage.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Actor</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Actor.Name" class="control-label"></label>
+                <input asp-for="Actor.Name" class="form-control" />
+                <span asp-validation-for="Actor.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Actor.Gender" class="control-label"></label>
+                <input asp-for="Actor.Gender" class="form-control" />
+                <span asp-validation-for="Actor.Gender" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Actor.DOB" class="control-label"></label>
+                <input asp-for="Actor.DOB" class="form-control" />
+                <span asp-validation-for="Actor.DOB" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Actor.Bio" class="control-label"></label>
+                <input asp-for="Actor.Bio" class="form-control" />
+                <span asp-validation-for="Actor.Bio" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Actor.IsSuperstar" /> @Html.DisplayNameFor(model => model.Actor.IsSuperstar)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="Actor.MovieFk" class="control-label"></label>
+                <select asp-for="Actor.MovieFk" class ="form-control" asp-items="ViewBag.MovieFk"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
