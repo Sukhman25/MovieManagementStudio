@@ -14,18 +14,18 @@ namespace MovieManagementStudio.Models
 
         [Required]                                      //to make necessary for the fields
         [StringLength(50)]
-        public string Name { get; set; }
+        public string Name { get; set; }            //Name of Producer
 
         [Required]
         [StringLength(1)]
-        public string Sex { get; set; }
+        public string Sex { get; set; }             //Gender of Producer
 
         [Column(TypeName = "date")]
-        public DateTime DOB { get; set; }
+        public DateTime DOB { get; set; }           //Date Of Birth Of Produceer
 
-        public string Bio { get; set; }
+        public string Bio { get; set; }             // Some Biography about producer
 
-        public int MovieFk { get; set; }
+        public int MovieFk { get; set; }            //This is a foreign key
         [ForeignKey("MovieFk")]
         public Movie Movie { get; set; }
     }
